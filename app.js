@@ -400,9 +400,3 @@ document.getElementById('showAllProducts').addEventListener('click', function ()
 
 
 
-
-document.getElementById('Footwear').addEventListener('click', function () {
-    const footwear = products.filter(item => item.category === 'Footwear');
-    console.log(footwear);
-    // Add your code here to display the footwear array in your inner HTML
-});
