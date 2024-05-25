@@ -230,35 +230,86 @@ const products = [
 
 const div = document.querySelector('div');
 
-// const electronics = products.filter(item => item.category === 'products');
 
 
 console.log(products);
 
+function renderCategory(category) {
+    const productsByCategory = products.filter(item => item.category === category);
+    console.log(productsByCategory);
 
 
-  document.getElementById('Electronics').addEventListener('click', function() {
-    const electronics = products.filter(item => item.category === 'Electronics');
-    console.log(electronics);
-  
-    // Create a new div element to hold the electronics items
-    const electronicsDiv = document.createElement('div');
-  
-    // Loop through the electronics array and create a new div element for each item
-    electronics.forEach(item => {
-      const itemDiv = document.createElement('div');
-      itemDiv.innerHTML = `
+    const categoryDiv = document.createElement('div');
+
+
+    productsByCategory.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.innerHTML = `
         <h2>${item.name}</h2>
         <p>Price: ${item.price}</p>
         <p>Brand: ${item.brand}</p>
       `;
-      electronicsDiv.appendChild(itemDiv);
+        categoryDiv.appendChild(itemDiv);
     });
-  
-    // Add the electronicsDiv to the inner HTML of the div element
+
+
     div.innerHTML = '';
-    div.appendChild(electronicsDiv);
-  });
+    div.appendChild(categoryDiv);
+}
+
+// Electronics Category
+document.getElementById('Electronics').addEventListener('click', function () {
+    renderCategory('Electronics');
+});
+
+// Footwear Category
+document.getElementById('Footwear').addEventListener('click', function () {
+    renderCategory('Footwear');
+});
+
+// Appliances Category
+document.getElementById('Appliances').addEventListener('click', function () {
+    renderCategory('Home Appliances');
+});
+
+// Stationery Category
+document.getElementById('Stationery').addEventListener('click', function () {
+    renderCategory('Stationery');
+});
+
+// Furniture Category
+document.getElementById('Furniture').addEventListener('click', function () {
+    renderCategory('Furniture');
+});
+
+// Fitness Category
+document.getElementById('Fitness').addEventListener('click', function () {
+    renderCategory('Fitness');
+});
+
+
+
+// ShowAllProducts"
+
+
+document.getElementById('showAllProducts').addEventListener('click', function () {
+
+    const allProductsDiv = document.createElement('div');
+
+    products.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.innerHTML = `
+        <h2>${item.name}</h2>
+        <p>Price: ${item.price}</p>
+        <p>Brand: ${item.brand}</p>
+        <p>Category: ${item.category}</p>
+      `;
+        allProductsDiv.appendChild(itemDiv);
+    });
+
+    div.innerHTML = '';
+    div.appendChild(allProductsDiv);
+});
 
 
 
@@ -306,8 +357,52 @@ console.log(products);
 
 
 
-  document.getElementById('Footwear').addEventListener('click', function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('Footwear').addEventListener('click', function () {
     const footwear = products.filter(item => item.category === 'Footwear');
     console.log(footwear);
     // Add your code here to display the footwear array in your inner HTML
-  });
+});
