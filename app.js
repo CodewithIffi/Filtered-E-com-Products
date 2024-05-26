@@ -239,6 +239,7 @@ function renderCategory(category) {
     console.log(productsByCategory);
 
 
+
     const categoryDiv = document.createElement('div');
 
 
@@ -256,6 +257,11 @@ function renderCategory(category) {
     div.innerHTML = '';
     div.appendChild(categoryDiv);
 }
+
+
+
+
+
 
 // Electronics Category
 document.getElementById('Electronics').addEventListener('click', function () {
